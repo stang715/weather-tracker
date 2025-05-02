@@ -13,6 +13,7 @@ from mysql.connector import errorcode
 
 try:
     mycursor.execute("USE weather_db")
+    print(f"Currently using weather_db")
 except mysql.connector.Error as err:
     if err.errno == errorcode.ER_BAD_DB_ERROR:
         print("Database does not exist. Creating database...")
@@ -33,6 +34,7 @@ try:
             humidity FLOAT
         )
     """)
+    print(f"Table weater created")
 except mysql.connector.Error as err:
     print(f"Failed to create table: {err}")
 
