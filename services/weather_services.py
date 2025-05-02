@@ -1,6 +1,4 @@
 import requests
-import mysql.connector
-import os
 from models.weather_dto import *
 from repositories.weather_repository import *
 
