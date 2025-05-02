@@ -7,15 +7,16 @@ def run_weather_tracker():
 
     print(hours)
 
+    api = input("enter your api id")
     # hard coded the lat and lon for these 3 cities
-    urlList = [('chino hills', 'https://api.openweathermap.org/data/2.5/forecast?lat=33.9926803&lon=-117.760056&limit=1&cnt=3&appid=01952b2c2d99bab838ea5c82988c6b19'), 
-            ('seattle', "https://api.openweathermap.org/data/2.5/forecast?lat=47.6038321&lon=-122.330062&limit=1&cnt=3&appid=01952b2c2d99bab838ea5c82988c6b19"), 
-            ('houston', "https://api.openweathermap.org/data/2.5/forecast?lat=29.7589382&lon=-95.3676974&limit=1&cnt=3&appid=01952b2c2d99bab838ea5c82988c6b19")]
+    urlList = {'chino hills': 'https://api.openweathermap.org/data/2.5/forecast?lat=33.9926803&lon=-117.760056&limit=1&cnt=3&appid='+api, 
+            'seattle': "https://api.openweathermap.org/data/2.5/forecast?lat=47.6038321&lon=-122.330062&limit=1&cnt=3&appid="+api, 
+            'houston': "https://api.openweathermap.org/data/2.5/forecast?lat=29.7589382&lon=-95.3676974&limit=1&cnt=3&appid="+api}
 
     count = 0
     while count < hours:
-        for url in urlList: 
-            store_weather_data(url)
+        for city in urlList: 
+            store_weather_data(urlList[city])
         print("Waiting for 1 hour before next request...")
         time.sleep(3600)  # Sleep for 3600 seconds = 1 hour
         count += 1
