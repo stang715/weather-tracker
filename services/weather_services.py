@@ -5,8 +5,6 @@ from models.weather_dto import *
 from repositories.weather_repository import *
 
 def store_weather_data(cityApi):
-
-    
     url = cityApi
     response = requests.post(url)
     result = []
