@@ -1,3 +1,6 @@
+Documentation: https://openweathermap.org/api
+Sign up for a free API key at: https://openweathermap.org/price
+
 How to run the application:
 1. run weather_repository first to create database. To do this type this in console: python weather_repository.py
 2. run app.py. To do this type: python app.py
